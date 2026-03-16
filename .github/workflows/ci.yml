@@ -23,8 +23,3 @@ jobs:
             -e GITHUB_USER="${{ github.actor }}" \
             -v ${{ github.workspace }}:/app \
             vowel-frequency-analyzer:latest
-```
-
-**4. Commit message:**
-```
-Fix ci.yml workflow code
