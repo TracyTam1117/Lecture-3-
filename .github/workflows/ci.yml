@@ -25,8 +25,6 @@ jobs:
             vowel-frequency-analyzer:latest
 ```
 
-**3. Click the green `Commit changes` button** (top right)
-
-**4. Use this commit message:**
+**4. Commit message:**
 ```
-Add ci.yml workflow code
+Fix ci.yml workflow code
