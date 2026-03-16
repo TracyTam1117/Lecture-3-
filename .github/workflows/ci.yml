@@ -1,1 +1,32 @@
+name: CI Workflow
 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run: |
+          docker build -t vowel-frequency-analyzer:latest .
+
+      - name: Run Docker container
+        run: |
+          docker run --rm \
+            -e GITHUB_USER="${{ github.actor }}" \
+            -v ${{ github.workspace }}:/app \
+            vowel-frequency-analyzer:latest
+```
+
+**3. Click the green `Commit changes` button** (top right)
+
+**4. Use this commit message:**
+```
+Add ci.yml workflow code
