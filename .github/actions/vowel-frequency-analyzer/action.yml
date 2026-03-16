@@ -1,0 +1,14 @@
+1  name: 'Vowel Frequency Analyzer'
+2  description: 'Custom action to analyze vowels frequency.'
+3
+4  inputs:
+5    file:
+6      description: 'The path to the text file to analyze (e.g., data.txt).'
+7      required: true
+8
+9  runs:
+10   using: 'docker'
+11   image: 'Dockerfile'
+12   entrypoint: ['/bin/bash', '/app/.github/scripts/entrypoint.sh']
+13   env:
+14     FILE: ${{ inputs.file }}
